@@ -1,0 +1,3 @@
+h1. Rplots
+
+A collection of erubis templates for plotting with R and ruby.
