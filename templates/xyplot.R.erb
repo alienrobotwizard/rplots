@@ -1,0 +1,4 @@
+d <- read.table('<%= data %>', header=FALSE, sep="\t");
+pdf('<%= plot %>', height=<%= height %>, width=<%= width %>);
+plot(d$V<%= x %>, d$V<%= y %>, type='b', xlab='<%= xlab %>', ylab='<%= ylab %>');
+dev.off();
