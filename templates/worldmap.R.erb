@@ -1,0 +1,7 @@
+library(maps);
+library(ggplot2);
+d <- read.table("<%= data %>", header=FALSE, sep="\t");
+world_map <- data.frame(map(plot=FALSE)[c("x", "y")]);
+world_gg  <- qplot(x, y, data=world_map, geom="path") + geom_point(aes(x=d$V<%= longitude %> , y=d$V<%= latitude %>), colour='red');
+pdf("<%= plot %>", width=<%= width %>, height=<%= height %>);
+world_gg;
