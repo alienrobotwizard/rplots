@@ -3,11 +3,11 @@
 require 'swineherd'
 require 'swineherd/script/r_script' ; include Swineherd::Script
 
-Settings.define :width,  :default => 1200
-Settings.define :x,      :default => 1
-Settings.define :weight
-Settings.define :xlab,   :default => "X"
-Settings.define :ylab,   :default => "Y"
+Settings.define :width,  :default => 1200, :description => "Plot width in pixels"
+Settings.define :x,      :default => 1,    :description => "Column to compute histogram of"
+Settings.define :weight,                   :description => "Column to use as histogram weight"
+Settings.define :xlab,   :default => "X",  :description => "X label"
+Settings.define :ylab,   :default => "Y",  :description => "Y label"
 Settings.resolve!
 
 raise "No input data!" unless Settings.rest.first
