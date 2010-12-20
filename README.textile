@@ -41,5 +41,11 @@ h3. Log-Log Histogram
 ./logloghist.rb data/frequency.tsv
 </code></pre>
 
+h3. World Map
+
+<pre><code>
+./worldmap.rb --lat=2 --lon=3 data/airports.tsv
+</code></pre>
+
 
 More are on the way.
