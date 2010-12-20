@@ -1,0 +1,5 @@
+library(ggplot2);
+d <- read.table('<%= data %>', header=FALSE, sep='\t');
+p <- ggplot(d, aes(x=d$V<%= x %>)) + <% if weight %> geom_histogram(aes(weight=d$V<%= weight %>)) <% else %> geom_histogram() <% end %> + xlab("<%= xlab %>") + ylab("<%= ylab %>");
+png('<%= plot %>', width=<%= width %>, res=132);
+p;
