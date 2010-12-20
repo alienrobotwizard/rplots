@@ -1,3 +1,45 @@
 h1. Rplots
 
 A collection of erubis templates for plotting with R and ruby.
+
+h2. Pre-requisites
+
+You'll need to install R:
+
+<pre><code>
+# ubuntu
+sudo apt-get install R
+</code></pre>
+
+For mac os x try: http://cran.r-project.org/bin/macosx/. If the mac installer doesn't already, symlink the @Rscript@ executable to @/usr/bin/Rscript@.
+
+Once R is installed, install "ggplot2":http://had.co.nz/ggplot2/.
+
+<pre><code>
+Rprompt$: install.packages("ggplot2")
+</code></pre>
+
+h2. Examples
+
+Provided are some examples of using the templates with "Swineherd":http://github.com/Ganglion/swineherd.
+
+h3. XY plot
+
+<pre><code>
+./xyplot.rb data/henon.tsv
+</code></pre>
+
+h3. Histogram
+
+<pre><code>
+./histogram.rb data/frequency.tsv
+</code></pre>
+
+h3. Log-Log Histogram
+
+<pre><code>
+./logloghist.rb data/frequency.tsv
+</code></pre>
+
+
+More are on the way.
