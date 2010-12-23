@@ -21,12 +21,12 @@ Rprompt$: install.packages("ggplot2")
 
 h2. Examples
 
-Provided are some examples of using the templates with "Swineherd":http://github.com/Ganglion/swineherd.
+Provided are some examples of using the templates with "Swineherd":http://github.com/Ganglion/swineherd. All examples make use of the "configliere":http://github.com/mrflip/configliere gem, thus using @--help@ as an option should print options specific to that plot example.
 
 h3. XY plot
 
 <pre><code>
-./xyplot.rb data/henon.tsv
+./xyplot.rb --points --width=800 --point_size=0.1 data/henon.tsv
 </code></pre>
 
 h3. Histogram
