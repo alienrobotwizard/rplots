@@ -47,5 +47,20 @@ h3. World Map
 ./worldmap.rb --lat=2 --lon=3 data/airports.tsv
 </code></pre>
 
+h4. Timeseries with Months
+
+Often it is the case you've got timeseries of the form:
+
+<pre><code>
+ 201006 1234
+ 201007 5678
+ ...
+</code></pre>
+
+This transforms the month field into something R can understand and plots it with the right scaling.
+
+<pre><code>
+./monthseries.rb --month=2 --y=3 --xlab="Month" --ylab="Passengers in + Passengers out" data/passengers_in_out_lax_airpt.tsv
+</code></pre>
 
 More are on the way.

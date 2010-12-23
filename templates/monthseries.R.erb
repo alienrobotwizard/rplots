@@ -1,0 +1,6 @@
+library(ggplot2);
+d <- read.table('<%= data %>', header=FALSE, sep="\t");
+png('<%= plot %>', width=<%= width %>, res=132);
+## expects a field called month (eg. 201011), tacks 01 on the end of each
+d$V<%= month %> <- as.Date(paste(substr(d$V<%= month %>,0,4),substr(d$V<%= month %>,5,6),"01",sep="-"));
+ggplot(d, aes(x=d$V<%= month %>, y=d$V<%= y %>)) + <% if points %> geom_point(colour=colors()[619], size=<%= size %>) <% else %> geom_line(colour=colors()[619], size=<%= size %>) <% end %> + xlab("<%= xlab %>") + ylab("<%= ylab %>");
