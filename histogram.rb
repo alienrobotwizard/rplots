@@ -8,6 +8,7 @@ Settings.define :x,      :default => 1,       :description => "Column to compute
 Settings.define :weight,                      :description => "Column to use as histogram weight"
 Settings.define :xlab,   :default => "X",     :description => "X label"
 Settings.define :ylab,   :default => "Count", :description => "Y label"
+Settings.define :title,  :default => "",      :description => "Title of the plot"
 Settings.resolve!
 
 raise "No input data!" unless Settings.rest.first
@@ -21,6 +22,7 @@ plotter.attributes = {
   :weight => Settings.weight,
   :xlab   => Settings.xlab,
   :ylab   => Settings.ylab,
-  :width  => Settings.width
+  :width  => Settings.width,
+  :title  => Settings.title
 }
 plotter.run true

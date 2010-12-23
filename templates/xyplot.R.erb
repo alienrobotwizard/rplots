@@ -1,5 +1,4 @@
 library(ggplot2);
 d <- read.table('<%= data %>', header=FALSE, sep="\t");
 png('<%= plot %>', width=<%= width %>, res=132);
-p <- ggplot(d, aes(x=d$V<%= x %>, y=d$V<%= y %>)) + <% if points %> geom_point(colour=colors()[619], size=<%= size %>) <% else %> geom_line(colour=colors()[619], size=<%= size %>) <% end %> + xlab("<%= xlab %>") + ylab("<%= ylab %>");
-p
+ggplot(d, aes(x=d$V<%= x %>, y=d$V<%= y %>)) + <% if points %> geom_point(colour=colors()[619], size=<%= size %>) <% else %> geom_line(colour=colors()[619], size=<%= size %>) <% end %> + opts(title="<%= title %>") + xlab("<%= ylab %>") + ylab("<%= ylab %>");

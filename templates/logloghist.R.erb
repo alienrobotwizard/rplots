@@ -1,5 +1,5 @@
 library(ggplot2);
 d <- read.table('<%= data %>', header=FALSE, sep='\t');
-p <- ggplot(d, aes(x=d$V<%= x %>)) + <% if weight %> geom_histogram(aes(weight=d$V<%= weight %>), colour='black', fill='grey', alpha=0.7) <% else %> geom_histogram(colour='black', fill='grey', alpha=0.7) <% end %> + xlab("<%= xlab %>") + ylab("<%= ylab %>") + scale_x_log10() + scale_y_log10();
+p <- ggplot(d, aes(x=d$V<%= x %>)) + <% if weight %> geom_histogram(aes(weight=d$V<%= weight %>), colour='black', fill='grey', alpha=0.7) <% else %> geom_histogram(colour='black', fill='grey', alpha=0.7) <% end %> + xlab("<%= xlab %>") + ylab("<%= ylab %>") + opts(title="<%= title %>") + scale_x_log10() + scale_y_log10();
 png('<%= plot %>', width=<%= width %>, res=132);
 p;

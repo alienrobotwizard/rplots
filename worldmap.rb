@@ -7,6 +7,7 @@ Settings.define :width,  :default => 84,    :description => "Plot width in inche
 Settings.define :height, :default => 48,    :description => "Plot height in inches"
 Settings.define :lat,    :default => 1,     :description => "Latitude field"
 Settings.define :lon,    :default => 2,     :description => "Longitude field"
+Settings.define :title,  :default => "",    :description => "Title of the plot"
 Settings.resolve!
 
 raise "No input data!" unless Settings.rest.first
@@ -19,6 +20,7 @@ plotter.attributes = {
   :latitude  => Settings.lat,
   :longitude => Settings.lon,
   :width     => Settings.width,
+  :title     => Settings.title,
   :height    => Settings.height
 }
 plotter.run true

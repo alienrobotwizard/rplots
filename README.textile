@@ -26,7 +26,7 @@ Provided are some examples of using the templates with "Swineherd":http://github
 h3. XY plot
 
 <pre><code>
-./xyplot.rb --points --width=800 --point_size=0.1 data/henon.tsv
+./xyplot.rb --points --width=800 --title="Henon Map" --point_size=0.01 data/henon.tsv
 </code></pre>
 
 h3. Histogram

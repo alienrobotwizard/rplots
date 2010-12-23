@@ -20,6 +20,7 @@ Settings.define :points,     :default => false, :description => "Plot defaults t
 Settings.define :xlab,       :default => "X",   :description => "X label"
 Settings.define :ylab,       :default => "Y",   :description => "Y label"
 Settings.define :point_size, :default => 1,     :description => "Width of line in pixels or size of points in pixels"
+Settings.define :title,      :default => "",    :description => "Title of the plot"
 Settings.resolve!
 
 raise "No input data!" unless Settings.rest.first
@@ -35,6 +36,7 @@ plotter.attributes = {
   :ylab   => Settings.ylab,
   :width  => Settings.width,
   :size   => Settings.point_size,
+  :title  => Settings.title,
   :points => Settings.points
 }
 plotter.run true

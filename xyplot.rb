@@ -9,6 +9,7 @@ Settings.define :y,          :default => 2,     :description => "Column to use a
 Settings.define :points,     :default => false, :description => "Plot defaults to line, use points instead"
 Settings.define :xlab,       :default => "X",   :description => "X label"
 Settings.define :ylab,       :default => "Y",   :description => "Y label"
+Settings.define :title,      :default => "",    :description => "Title of the plot"
 Settings.define :point_size, :default => 1,     :description => "Width of line in pixels or size of points in pixels"
 Settings.resolve!
 
@@ -23,8 +24,10 @@ plotter.attributes = {
   :y      => Settings.y,
   :xlab   => Settings.xlab,
   :ylab   => Settings.ylab,
+  :title  => Settings.title,
   :width  => Settings.width,
   :size   => Settings.point_size,
   :points => Settings.points
 }
+puts File.read(plotter.script)
 plotter.run true
